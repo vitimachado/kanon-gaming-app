@@ -1,0 +1,47 @@
+.card-error {
+    font-size: small;
+    width: 40%;
+    background-color: #da6e6e;
+    font-weight: 600;
+    color: white;
+}
+
+.container-error {
+    width: 100%;;
+    position: fixed;
+    bottom: 0px;
+    justify-content: center;
+    display: flex;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+.fadeout {
+    opacity: 0;
+      -webkit-animation: fadeout 6s; /* Safari, Chrome and Opera > 12.1 */
+         -moz-animation: fadeout 6s; /* Firefox < 16 */
+          -ms-animation: fadeout 6s; /* Internet Explorer */
+           -o-animation: fadeout 6s; /* Opera < 12.1 */
+              animation: fadeout 6s;
+  }
+  
+  @keyframes fadeout {
+      from { opacity: 1; }
+      to   { opacity: 0; }
+  }
+  
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
