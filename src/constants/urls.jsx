@@ -1,7 +1,6 @@
 const urls = {
-  restcountries: '/api/v1/restcountries',
+  countrybyname: '/api/v1/countrybyname',
+  countriesbynames: '/api/v1/countriesbynames',
 };
 
-export default {
-  urls,
-};
+export default { urls };

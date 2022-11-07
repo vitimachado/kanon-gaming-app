@@ -6,12 +6,7 @@ import {
 import store from '../../store/store';
 
 const api = axios.create({
-  baseURL: 'http://192.168.1.172:3000', // 'http://10.255.1.27:3000', //process.env.REACT_APP_HAMMERHEADSHARK,
-  timeout: 5000,
-});
-
-const apiBridge = axios.create({
-  baseURL: 'http://192.168.1.172:8080', // 'http://10.255.1.27:8080', //process.env.REACT_APP_BRIDGE,
+  baseURL: 'http://localhost:3001', // 'http://10.255.1.27:3000', //process.env.REACT_APP_HAMMERHEADSHARK,
   timeout: 5000,
 });
 
@@ -52,4 +47,4 @@ const setAuthToken = (token) => {
   }
 };
 
-export { api, apiBridge, setAuthToken };
+export { api, setAuthToken };

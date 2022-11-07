@@ -1,5 +1,8 @@
 .button {
-  width: auto;
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
   background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
   border: 0px;
   border-radius: 10px;
@@ -13,6 +16,7 @@
   font-weight: bold;
   font-size: 18px;
   cursor: pointer;
+  margin: 30px;
 }
 
 .button:hover {

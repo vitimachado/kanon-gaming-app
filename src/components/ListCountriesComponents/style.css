@@ -1,0 +1,25 @@
+.wrapper-list {
+  width: 100%;
+}
+
+.list-table {
+  padding: 0;
+}
+
+.wrapper-item {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-bottom:1px solid #d5d5d5;
+  padding:5px;
+}
+
+.wrapper-item:hover {
+  background-color: #f9f9f9;
+}
+
+img {
+  margin-right: 10px;
+}

@@ -6,9 +6,11 @@ export default function QuestionsContainer({ title, children, style }) {
   return (
     <div className="wrapper">
       <h1>{title}</h1>
-      <Card style={style}>
-        <div className="wrapper card-main">{children}</div>
-      </Card>
+      <div style={style}>
+        <Card>
+          <div className="card-main">{children}</div>
+        </Card>
+      </div>
     </div>
   );
 }
