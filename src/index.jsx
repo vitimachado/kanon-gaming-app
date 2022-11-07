@@ -1,17 +1,14 @@
 import React from 'react';
-// import { ApolloProvider } from 'react-apollo';
-// import apolloClient from './services/apolo/apolo';
-import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import store from './store/store';
 
-render(
-  // <ApolloProvider client={apolloClient}>
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  // </ApolloProvider>,
-  document.getElementById('root'),
 );

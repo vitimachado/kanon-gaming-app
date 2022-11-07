@@ -1,5 +1,5 @@
-import { getCountriesByNamesApi } from '../../services/locations';
-import { setCountries } from '../../store/reducers/countries_reducer';
+import { getAllCountriesApi } from '../../services/locations';
+import { setAllCountries } from '../../store/reducers/countries_reducer';
 import store from '../../store/store';
 
 const handleError = (err) => {
@@ -18,12 +18,11 @@ const handleError = (err) => {
   }
 };
 
-export default function getCountriesByNames(countries) {
-  console.log('getCountriesByNames response', countries);
-  getCountriesByNamesApi(countries)
+export default function getAllCountries() {
+  getAllCountriesApi()
     .then(async (response) => {
       console.log('getCountriesByNames response', response.data.data.countries);
-      store.dispatch(setCountries(response.data.data.countries));
+      store.dispatch(setAllCountries(response.data.data.countries));
     })
     .catch((err) => handleError(err));
 }

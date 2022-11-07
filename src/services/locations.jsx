@@ -14,3 +14,7 @@ export function getCountriesByNamesApi(countries) {
     countryNames: countries,
   });
 }
+
+export function getAllCountriesApi() {
+  return api.get(`${urls.urls.allCountries}`);
+}

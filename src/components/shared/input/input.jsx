@@ -8,9 +8,9 @@ export default function Input({
   style,
   value = '',
   getRef,
-  onChange,
-  onClick,
-  onKeyPress,
+  onChange = () => null,
+  onClick = () => null,
+  onKeyPress = () => null,
 }) {
   const [valueHandle, setValueHandle] = useState(value);
 
@@ -23,7 +23,7 @@ export default function Input({
         className="input"
         placeholder={placeholder}
         onChange={(e) => {
-          onChange(e);
+          onChange(e.target.value);
           setValueHandle(e.target.value);
         }}
         onClick={onClick}
