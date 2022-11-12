@@ -3,26 +3,10 @@ import { useRoutes } from 'react-router-dom';
 import Question1 from '../containers/Question1/question1';
 import Question2 from '../containers/Question2/question2';
 import Question3 from '../containers/Question3/question3';
-import Question4 from '../containers/Question4/question4';
+import Question4And5 from '../containers/Question4And5/question4And5';
+import Question6 from '../containers/Question6/question6';
 
 export default function Routes() {
-  // let element = useRoutes([
-  //   {
-  //       element: <AuthLayout />,
-  //       children: [
-  //           { path: '/', element: <Login /> },
-  //           { path: 'signup', element: <SignUp /> },
-  //       ],
-  //   },
-  //   {
-  //       element: <MainLayout />,
-  //       children: [
-  //           { path: 'home', element: <Home /> },
-  //           { path: 'about', element: <About /> },
-  //       ],
-  //   },
-  // ]);
-  // return element;
   const element = useRoutes([
     {
       path: '/',
@@ -37,16 +21,13 @@ export default function Routes() {
       element: <Question3 />,
     },
     {
-      path: '/q4',
-      element: <Question4 />,
+      path: '/q4and5',
+      element: <Question4And5 />,
     },
-    // {
-    //   path: '/books',
-    //   children: [
-    //     { index: true, element: <BookList /> },
-    //     { path: ':id', element: <Book /> }
-    //   ]
-    // }
+    {
+      path: '/q6',
+      element: <Question6 />,
+    },
   ]);
 
   return element;

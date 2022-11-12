@@ -9,11 +9,11 @@
 }
 
 .container-input:hover {
-  border-bottom: 2px solid rgba(55, 27, 212, 0.3);
+  border-bottom: 2px solid rgb(var(--pure-material-primary-rgb, 33, 150, 243));
 }
 
-.container-input:focus {
-  border-bottom: 2px solid rgba(55, 27, 212, 0.3);
+.container-input:has(> input:focus) {
+  border-bottom: 2px solid rgb(var(--pure-material-primary-rgb, 33, 150, 243));
 }
 
 input {

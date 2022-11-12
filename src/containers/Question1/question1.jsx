@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Button from '../../components/common/button/button';
 import QuestionsContainer from '../../components/QuestionsContainer';
-import Button from '../../components/shared/button/button';
 import getCountryByName from './actions';
 import './question1.css';
 

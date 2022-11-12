@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Button from '../../components/common/button/button';
 import CountriesList from '../../components/ListCountriesComponents';
 import QuestionsContainer from '../../components/QuestionsContainer';
-import Button from '../../components/shared/button/button';
 import getCountriesByNames from './actions';
 import './question2.css';
 

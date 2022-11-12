@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../shared/card/card';
+import Card from '../common/card/card';
 import './style.css';
 
 export default function QuestionsContainer({ title, children, style }) {

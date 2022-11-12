@@ -6,9 +6,16 @@ export default function Button({
   className = 'button',
   onClick,
   style,
+  disabled = false,
 }) {
   return (
-    <button type="button" className={className} onClick={onClick} style={style}>
+    <button
+      type="button"
+      className={className}
+      onClick={onClick}
+      style={style}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

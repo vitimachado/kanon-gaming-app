@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Button from '../../components/common/button/button';
+import Input from '../../components/common/input/input';
 import CountriesList from '../../components/ListCountriesComponents';
 import QuestionsContainer from '../../components/QuestionsContainer';
-import Button from '../../components/shared/button/button';
-import Input from '../../components/shared/input/input';
 import { filterArrayObjByStartsWith } from '../../utils/strings';
 import getAllCountries from './actions';
 import './question3.css';
@@ -27,7 +27,7 @@ export default function Question3() {
   };
 
   const handleOnClick = () => {
-    navigate('/q4');
+    navigate('/q4and5');
   };
 
   const style = {

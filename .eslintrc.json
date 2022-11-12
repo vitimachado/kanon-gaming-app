@@ -25,6 +25,7 @@
       "import/extensions": "off",
       "no-param-reassign": "off",
       "react/no-array-index-key": "off",
+      "no-useless-escape": 0,
       "linebreak-style": 0,
       "implicit-arrow-linebreak": 0
     }

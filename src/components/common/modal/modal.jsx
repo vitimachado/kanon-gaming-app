@@ -1,10 +1,12 @@
 import React from 'react';
 import './modal.css';
+import Card from '../card/card';
 
-export default function ModalBackground({
+export default function Modal({
   children,
-  onClickBackground,
-  style,
+  onClickBackground = () => null,
+  styleBackground,
+  styleCard,
   on = true,
 }) {
   const handleClick = (e) => {
@@ -16,11 +18,13 @@ export default function ModalBackground({
     <div
       className={on ? 'modal-background' : ''}
       onClick={handleClick}
-      style={style}
-      onKeyDown={handleClick}
+      style={styleBackground}
+      onKeyDown={() => null}
       role="presentation"
     >
-      {children}
+      <Card className="card " style={styleCard}>
+        {children}
+      </Card>
     </div>
   );
 }

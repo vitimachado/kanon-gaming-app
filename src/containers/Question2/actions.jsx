@@ -3,19 +3,19 @@ import { setCountries } from '../../store/reducers/countries_reducer';
 import store from '../../store/store';
 
 const handleError = (err) => {
-  console.log('---handleLoginError err', err.code);
-  const { status } = err.response;
-  console.log('---handleLoginError', status, status === 401);
-  switch (status) {
-    case undefined:
-      break;
+  console.log('---handleLoginError err', err);
+  // const { status } = err.response;
+  // console.log('---handleLoginError', status, status === 401);
+  // switch (status) {
+  //   case undefined:
+  //     break;
 
-    case 401:
-      break;
+  //   case 401:
+  //     break;
 
-    default:
-      break;
-  }
+  //   default:
+  //     break;
+  // }
 };
 
 export default function getCountriesByNames(countries) {

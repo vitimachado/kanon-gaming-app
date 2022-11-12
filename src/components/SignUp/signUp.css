@@ -26,3 +26,14 @@
 .container-input-custom {
   margin: 30px 30px 0 30px;
 }
+
+.title {
+  margin-left: 30px;
+}
+
+.validation-error {
+  height: 18px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: red;
+}

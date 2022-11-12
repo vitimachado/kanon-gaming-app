@@ -1,6 +1,4 @@
-import { getAllCountriesApi } from '../../services/locations';
-import { setAllCountries } from '../../store/reducers/countries_reducer';
-import store from '../../store/store';
+import { postUserRegisterApi } from '../../services/user';
 
 const handleError = (err) => {
   console.log('---handleLoginError err', err);
@@ -18,11 +16,12 @@ const handleError = (err) => {
   // }
 };
 
-export default function getAllCountries() {
-  getAllCountriesApi()
+export default function postUserRegister(userObj) {
+  console.log('postUserRegister userObj', userObj);
+  postUserRegisterApi(userObj)
     .then(async (response) => {
-      console.log('getCountriesByNames response', response.data.data.countries);
-      store.dispatch(setAllCountries(response.data.data.countries));
+      console.log('postUserRegister response', response);
+      // store.dispatch(setAllCountries(response.data.data.countries));
     })
     .catch((err) => handleError(err));
 }
