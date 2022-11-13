@@ -4,7 +4,9 @@ import store from '../../store/store';
 
 /*
  * Function to call the api to get country by names.
- * @countries: String[] - Array with country names.
+ *
+ * @export
+ * @param {String[]} countries - Array with country names.
  */
 export default function getCountriesByNames(countries) {
   getCountriesByNamesApi(countries).then(async (response) => {

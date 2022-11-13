@@ -6,14 +6,29 @@ import QuestionsContainer from '../../components/QuestionsContainer';
 import getCountryByName from './actions';
 import './question1.css';
 
+/**
+ *  Component of the page that loads datas for a country.
+ *
+ * @export
+ * @return {function}
+ */
 export default function Question1() {
   const navigate = useNavigate();
   const { country } = useSelector((state) => state.countries);
 
+  /**
+   *  Hook to get the initial life of cycle to call the handle
+   *  to get the country.
+   */
   useEffect(() => {
-    getCountryByName('Malta');
+    if (country == null) {
+      getCountryByName('Malta');
+    }
   }, []);
 
+  /**
+   *  Method to handle click to navigate to next page.
+   */
   const handleOnClick = () => {
     navigate('/q2');
   };

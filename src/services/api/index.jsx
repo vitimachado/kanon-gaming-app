@@ -5,6 +5,7 @@ import {
   setSnackbar,
 } from '../../store/reducers/loading_reducer';
 import store from '../../store/store';
+import { getLocalStorageAndParseToken } from '../../utils/strings';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL_SERVER, // 'http://localhost:3001',
@@ -25,7 +26,7 @@ const getAuthToken = () => api.defaults.headers.common.Authorization;
 const getAndSetAuthToken = () => {
   const authToken = getAuthToken();
   if (authToken) return getAuthToken();
-  const token = localStorage.getItem('token');
+  const token = getLocalStorageAndParseToken();
   if (!getAuthToken() && !!token) {
     setAuthToken(token);
     return getAuthToken();

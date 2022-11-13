@@ -11,7 +11,7 @@ import Loading from '../components/common/loading/loading';
 
 export default function Guard({ children }) {
   // eslint-disable-next-line no-unused-vars
-  const [token, setToken] = useLocalStorage('token');
+  const [token] = useLocalStorage('token');
   const { snackbar } = useSelector((state) => state.loading);
   const { user } = useSelector((state) => state.user);
   const navigate = useNavigate();

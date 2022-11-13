@@ -21,9 +21,19 @@ function validateEmail(email) {
   return regex.test(email);
 }
 
+const getLocalStorageAndParseToken = () => {
+  const token = localStorage.getItem('token');
+  try {
+    return JSON.parse(token);
+  } catch (error) {
+    return token.replace('"', '');
+  }
+};
+
 export {
   validateEmail,
   validateLengthBoolean,
   validateLength,
+  getLocalStorageAndParseToken,
   filterArrayObjByStartsWith,
 };

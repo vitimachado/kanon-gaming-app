@@ -34,6 +34,12 @@ export default function SlotMachine() {
     (state) => state.slotMachine,
   );
 
+  /**
+   *  Method  to check if Array is Ok.
+   *
+   * @param {String[]} array Array of string with the items.
+   * @param {Number} length Number of the length.
+   */
   const checkIsArrayOk = (array, length) =>
     Array.isArray(array) &&
     array?.length === length &&
@@ -45,16 +51,25 @@ export default function SlotMachine() {
       index,
     );
 
+  /**
+   * Method to handle the action to spin the slots.
+   */
   const handleSpin = () => {
     setFreeButton(false);
     setStart(true);
     sortMachineApi(coins);
   };
 
+  /**
+   * Method to handle the action to add 20 coins.
+   */
   const handleAddCoins = () => {
     setCoinsApi(20);
   };
 
+  /**
+   * Method to handle the actions when the last slot stop to spin.
+   */
   const handleOnStoped = () => {
     setFreeButton(true);
     if (prize && prize > 0) {

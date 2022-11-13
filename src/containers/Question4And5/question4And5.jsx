@@ -8,6 +8,13 @@ import SignIn from '../../components/SignIn/signIn';
 import './question4And5.css';
 import Button from '../../components/common/button/button';
 
+/**
+ *  Component of the page that render a form to Sign in
+ *  and Sign Up.
+ *
+ * @export
+ * @return {function}
+ */
 export default function Question4And5() {
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
@@ -30,6 +37,7 @@ export default function Question4And5() {
     navigate('/q3');
   };
 
+  /* If theres no user return null. */
   if (user && user.email) return null;
 
   return (

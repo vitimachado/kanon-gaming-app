@@ -10,25 +10,45 @@ import { filterArrayObjByStartsWith } from '../../utils/strings';
 import getAllCountries from './actions';
 import './question3.css';
 
+/**
+ *  Component of the page that loads datas for a countries
+ *  and has a search to filter the list.
+ *
+ * @export
+ * @return {function}
+ */
 export default function Question3() {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState('');
   const { allCountries } = useSelector((state) => state.countries);
 
+  /**
+   *  Hook to get the initial life of cycle to call the handle
+   *  to get the countries.
+   */
   useEffect(() => {
     if (allCountries == null) {
       getAllCountries();
     }
   }, []);
 
+  /**
+   *  Method to handle the input value change.
+   */
   const handleInputOnChange = (data) => {
     setInputValue(data.target.value);
   };
 
+  /**
+   *  Method to handle click to navigate to next page.
+   */
   const handleOnClick = () => {
     navigate('/q4and5');
   };
 
+  /**
+   *  Method to handle click to navigate to previous page.
+   */
   const handleBackButton = () => {
     navigate('/q2');
   };

@@ -24,7 +24,6 @@ export default function MachineSlot({
     }
   }, [sortedIndex]);
 
-  // eslint-disable-next-line no-unused-vars
   const getSlotImage = (name) => {
     switch (name) {
       case 'apple':

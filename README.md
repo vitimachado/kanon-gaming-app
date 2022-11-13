@@ -2,6 +2,10 @@
 
 Project made in React and using Redux.
 
+Live project in http://slot-machine-app.s3-website.eu-west-3.amazonaws.com/
+
+- Need the https://nodejs.org/en/ installed.
+
 ## Available Scripts
 
 In the project directory, you can run:
