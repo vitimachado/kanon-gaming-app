@@ -23,7 +23,7 @@ export default function Question6() {
   return (
     <div className="wrapper">
       <SlotMachine />
-      <Button onClick={() => handleLogout()}>Next</Button>
+      <Button onClick={() => handleLogout()}>Logout</Button>
     </div>
   );
 }

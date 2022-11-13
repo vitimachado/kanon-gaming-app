@@ -4,12 +4,12 @@ import styled, { keyframes } from 'styled-components';
 
 const purpleColor = '#bc13fe';
 
-const gradientTop = `
-  background: linear-gradient(to top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-`;
-const gradientBottom = `
-  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-`;
+// const gradientTop = `
+//   background: linear-gradient(to top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+// `;
+// const gradientBottom = `
+//   background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+// `;
 
 const boxShadowNeon = `
   0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem ${purpleColor},
@@ -42,64 +42,44 @@ export const WraperContainer = styled.div`
   color: white;
 `;
 
-// eslint-disable-next-line import/prefer-default-export
-export const SliderContainer = styled.div`
-  background: white;
+export const WrapperCoins = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  text-align: centere;
+  margin: auto;
+`;
+
+export const WrapperCoinsContainer = styled.div`
+  height: fit-content;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-direction: row;
+`;
+
+export const WrapperCoinImg = styled.img`
+  width: 5%;
+`;
+
+export const ButonNeon = styled.button`
+  background: purpleColor;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-  height: 300px;
-  margin: 10px;
-  overflow: hidden;
-  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 0.7em 1.5em;
+  margin: 30px;
+  cursor: pointer;
 
   animation: ${pulsateContainer} 1.5s infinite alternate;
   box-shadow: ${boxShadowNeon};
 
-  &:before,
-  &:after {
-    ${gradientTop}
-    ${gradientBottom}
-    content: "";
-    height: 300px;
-    position: absolute;
-    z-index: 2;
+  &:disabled {
+    animation: none;
+    box-shadow: none;
   }
-
-  &:after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-
-  &:before {
-    left: 0;
-    top: 0;
-  }
-`;
-
-const slideAnimation = (length) => keyframes`
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(calc(-165px * ${length}));
-  }
-`;
-
-export const SlideTrack = styled.div`
-  animation: ${({ lengthSlide }) => slideAnimation(lengthSlide)}
-    ${({ speedSlide }) => speedSlide} linear infinite;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-`;
-
-export const SlideItem = styled.div`
-  height: 200px;
-  width: 250px;
-`;
-
-export const SlideImg = styled.img`
-  width: 100%;
-  height: 100%;
 `;
