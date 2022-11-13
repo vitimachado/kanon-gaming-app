@@ -31,7 +31,6 @@ export default function Guard({ children }) {
   };
 
   const checkSession = () => {
-    console.log('Guard', token);
     if (token) {
       checkUserAndGoToMainPage();
     } else {
@@ -48,7 +47,6 @@ export default function Guard({ children }) {
   }, [snackbar]);
 
   useEffect(() => {
-    console.log('location.pathname', location.pathname);
     if (pathsVerifyToken.includes(location.pathname)) {
       checkSession();
     }

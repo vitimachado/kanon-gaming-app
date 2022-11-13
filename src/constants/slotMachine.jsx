@@ -32,3 +32,13 @@ export const Reel3 = [
   'banana',
   'lemon',
 ];
+
+export const slotMachineRules = [
+  '3 cherries in a row: 50 coins',
+  '2 cherries in a row: 40 coins',
+  '3 apples in a row: 20 coins',
+  '2 Apples in a row: 10 coins',
+  '3 bananas in a row: 15 coins',
+  '2 Bananas in a row: 5 coins',
+  '3 lemons in a row: 3 coins',
+];

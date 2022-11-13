@@ -18,25 +18,18 @@ export const loadingSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     setLoading: (state) => {
-      console.log('setLoading');
       state.loadingStatus = loadingEnum.running;
     },
     setIdleLoading: (state) => {
       state.loadingStatus = loadingEnum.idle;
     },
     setSuccessApi: (state, action) => {
-      console.log('setSuccessApi', action.payload);
       state.successApi = action.payload;
     },
     setErrorApi: (state, action) => {
-      console.log('setErrorApi', action.payload);
       state.errorApi = action.payload;
     },
     setSnackbar: (state, action) => {
-      console.log('setSnackbarMsg', action.payload, {
-        ...INITIAL_STATE.snackbar,
-        ...action.payload,
-      });
       state.snackbar = { ...INITIAL_STATE.snackbar, ...action.payload };
     },
     clearApiStatus: (state) => {

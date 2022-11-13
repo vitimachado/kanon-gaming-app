@@ -1,36 +1,9 @@
 /* eslint-disable indent */
 /* eslint-disable no-nested-ternary */
 import { tableMultiplierSorted } from '../../constants/slotMachine';
-import { postUserRegisterApi } from '../../services/user';
 import { randomArrayValue } from '../../utils/objects';
 
-const handleError = (err) => {
-  console.log('---handleLoginError err', err);
-  // const { status } = err.response;
-  // console.log('---handleLoginError', status, status === 401);
-  // switch (status) {
-  //   case undefined:
-  //     break;
-
-  //   case 401:
-  //     break;
-
-  //   default:
-  //     break;
-  // }
-};
-
-export default function postUserRegister(userObj) {
-  console.log('postUserRegister userObj', userObj);
-  postUserRegisterApi(userObj)
-    .then(async (response) => {
-      console.log('postUserRegister response', response);
-      // store.dispatch(setAllCountries(response.data.data.countries));
-    })
-    .catch((err) => handleError(err));
-}
-
-export const getSortedSlotTranslatePosition = (name, reelIndex) => {
+const getSortedSlotTranslatePosition = (name, reelIndex) => {
   switch (name) {
     case 'apple':
       return reelIndex === 1
@@ -57,3 +30,5 @@ export const getSortedSlotTranslatePosition = (name, reelIndex) => {
       return null;
   }
 };
+
+export default getSortedSlotTranslatePosition;

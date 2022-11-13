@@ -1,6 +1,8 @@
 /* eslint-disable no-unreachable */
 /* eslint-disable function-paren-newline */
 import React, { useState } from 'react';
+import { setSnackbar } from '../../store/reducers/loading_reducer';
+import store from '../../store/store';
 import {
   everyObjectValuesIsLike,
   someObjectValuesIsLike,
@@ -73,7 +75,19 @@ export default function SignUp({ closeModal = () => null }) {
    */
   const handleSubmit = (event) => {
     event.preventDefault();
-    postUserRegister(inputsValue);
+    postUserRegister(inputsValue).then(async (response) => {
+      const { user } = response.data.data;
+      closeModal();
+      store.dispatch(
+        setSnackbar({
+          statusCode: 200,
+          msg: `User ${user.email} register.`,
+          style: {
+            backgroundColor: 'green',
+          },
+        }),
+      );
+    });
   };
 
   const checkButtonValidation = () =>

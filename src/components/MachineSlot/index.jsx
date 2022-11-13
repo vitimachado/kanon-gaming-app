@@ -15,13 +15,6 @@ export default function MachineSlot({
 }) {
   const [started, setStarted] = useState(false);
   useEffect(() => {
-    console.log(
-      '!!!!!!!!!!!machineIndex',
-      machineIndex,
-      sortedIndex,
-      started,
-      start,
-    );
     if (sortedIndex && start) {
       setStarted(true);
       setTimeout(() => {

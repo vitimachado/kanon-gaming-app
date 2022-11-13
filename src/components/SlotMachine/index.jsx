@@ -4,13 +4,18 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Reel1, Reel2, Reel3 } from '../../constants/slotMachine';
+import {
+  Reel1,
+  Reel2,
+  Reel3,
+  slotMachineRules,
+} from '../../constants/slotMachine';
 import { setCoinsApi, sortMachineApi } from '../../services/slotMachine';
 import { setSnackbar } from '../../store/reducers/loading_reducer';
 import { clearPrize, setCoins } from '../../store/reducers/slotMachine_reducer';
 import store from '../../store/store';
 import MachineSlot from '../MachineSlot';
-import { getSortedSlotTranslatePosition } from './actions';
+import getSortedSlotTranslatePosition from './actions';
 import {
   ButonNeon,
   TextNeon,
@@ -28,16 +33,6 @@ export default function SlotMachine() {
   const { coins, prize, sortMachine } = useSelector(
     (state) => state.slotMachine,
   );
-
-  const slotMachineRules = [
-    '3 cherries in a row: 50 coins',
-    '2 cherries in a row: 40 coins',
-    '3 apples in a row: 20 coins',
-    '2 Apples in a row: 10 coins',
-    '3 bananas in a row: 15 coins',
-    '2 Bananas in a row: 5 coins',
-    '3 lemons in a row: 3 coins',
-  ];
 
   const checkIsArrayOk = (array, length) =>
     Array.isArray(array) &&

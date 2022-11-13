@@ -26,7 +26,6 @@ const generateKey = (pre) => `${pre}_${new Date().getTime()}`;
 
 function randomArrayValue(array) {
   const random = Math.floor(Math.random() * array.length);
-  console.log(random, array[random]);
   return array[random];
 }
 

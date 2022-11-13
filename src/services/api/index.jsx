@@ -7,7 +7,7 @@ import {
 import store from '../../store/store';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3001', // 'http://10.255.1.27:3000', //process.env.REACT_APP_HAMMERHEADSHARK,
+  baseURL: process.env.REACT_APP_BASE_URL_SERVER, // 'http://localhost:3001',
   timeout: 5000,
 });
 
@@ -42,7 +42,6 @@ api.interceptors.request.use(
   },
   (error) => {
     store.dispatch(setIdleLoading());
-    console.log('request error', error);
     return Promise.reject(error);
   },
 );
@@ -51,16 +50,10 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     store.dispatch(setIdleLoading());
-    console.info('response', response);
     return response;
   },
   (error) => {
     store.dispatch(setIdleLoading());
-    console.info(
-      'response error',
-      error.response?.data,
-      error.response?.data?.error,
-    );
     store.dispatch(
       setSnackbar({
         statusCode: error.response?.data?.statusCode,
