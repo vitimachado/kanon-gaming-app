@@ -25,23 +25,15 @@ export default function Question4And5() {
     setOpenModal(value);
   };
 
+  /* Function to handle the back button to navigate to question 3. */
   const handleBackButton = () => {
     navigate('/q3');
-  };
-
-  const style = {
-    width: '40%',
-    marginTop: '30px',
-  };
-
-  const styleCard = {
-    width: '35%',
   };
 
   if (user && user.email) return null;
 
   return (
-    <QuestionsContainer title="Question 4 and 5" style={style}>
+    <QuestionsContainer title="Question 4 and 5">
       <SignIn>
         <button
           type="button"
@@ -53,7 +45,7 @@ export default function Question4And5() {
       </SignIn>
       {openModal ? (
         <Modal
-          styleCard={styleCard}
+          styleCard={{ width: '35%' }}
           onClickBackground={() => handleToggleModal(false)}
         >
           <SignUp closeModal={() => handleToggleModal(false)} />

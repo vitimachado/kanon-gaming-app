@@ -33,13 +33,8 @@ export default function Question3() {
     navigate('/q2');
   };
 
-  const style = {
-    width: '40%',
-    marginTop: '30px',
-  };
-
   return allCountries ? (
-    <QuestionsContainer title="Question 3" style={style}>
+    <QuestionsContainer title="Question 3">
       <div className="container-input-custom">
         <Input onChange={handleInputOnChange} placeholder="Filter Countries" />
       </div>

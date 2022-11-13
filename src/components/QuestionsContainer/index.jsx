@@ -2,7 +2,12 @@ import React from 'react';
 import Card from '../common/card/card';
 import './style.css';
 
-export default function QuestionsContainer({ title, children, style }) {
+export default function QuestionsContainer({ title, children }) {
+  const style = {
+    width: '40%',
+    marginTop: '30px',
+  };
+
   return (
     <div className="wrapper">
       <h1>{title}</h1>

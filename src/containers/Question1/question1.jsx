@@ -14,17 +14,12 @@ export default function Question1() {
     getCountryByName('Malta');
   }, []);
 
-  const styleQuestionsContainer = {
-    width: '40%',
-    marginTop: '30px',
-  };
-
   const handleOnClick = () => {
     navigate('/q2');
   };
 
   return country ? (
-    <QuestionsContainer title="Question 1" style={styleQuestionsContainer}>
+    <QuestionsContainer title="Question 1">
       <div className="wrapper">
         <h5>This application was made in {country?.name}</h5>
         <img src={country?.flag} alt="Flag" width="30%" />

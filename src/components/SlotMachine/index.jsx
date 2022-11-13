@@ -117,7 +117,10 @@ export default function SlotMachine() {
               ))}
             </WrapperList>
           </div>
-          <ButonNeon onClick={() => handleAddCoins()} disabled={coins > 0}>
+          <ButonNeon
+            onClick={() => handleAddCoins()}
+            disabled={coins > 0 || !freeButton}
+          >
             Add 20 coins
           </ButonNeon>
         </WrapperCoinsContainer>

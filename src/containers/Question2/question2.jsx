@@ -25,13 +25,8 @@ export default function Question2() {
     navigate('/q1');
   };
 
-  const style = {
-    width: '40%',
-    marginTop: '30px',
-  };
-
   return countries ? (
-    <QuestionsContainer title="Question 2" style={style}>
+    <QuestionsContainer title="Question 2">
       <div className="container-list">
         <CountriesList countries={countries} />
       </div>
