@@ -13,6 +13,7 @@ export default function Question4And5() {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
+    console.log('Question4And5', user);
     if (user) {
       navigate('/q6');
     }

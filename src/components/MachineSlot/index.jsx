@@ -10,12 +10,19 @@ export default function MachineSlot({
   reel,
   sortedIndex,
   duration = 3000,
+  start = true,
   OnStoped = () => null,
 }) {
   const [started, setStarted] = useState(false);
   useEffect(() => {
-    console.log('machineIndex', machineIndex, sortedIndex);
-    if (sortedIndex) {
+    console.log(
+      '!!!!!!!!!!!machineIndex',
+      machineIndex,
+      sortedIndex,
+      started,
+      start,
+    );
+    if (sortedIndex && start) {
       setStarted(true);
       setTimeout(() => {
         setStarted(false);
