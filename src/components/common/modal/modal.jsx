@@ -7,7 +7,7 @@ export default function Modal({
   onClickBackground = () => null,
   styleBackground,
   styleCard,
-  on = true,
+  showCard = true,
 }) {
   const handleClick = (e) => {
     e.preventDefault();
@@ -16,15 +16,19 @@ export default function Modal({
 
   return (
     <div
-      className={on ? 'modal-background' : ''}
+      className="modal-background"
       onClick={handleClick}
       style={styleBackground}
       onKeyDown={() => null}
       role="presentation"
     >
-      <Card className="card " style={styleCard}>
-        {children}
-      </Card>
+      {showCard ? (
+        <Card className="card " style={styleCard}>
+          {children}
+        </Card>
+      ) : (
+        children
+      )}
     </div>
   );
 }

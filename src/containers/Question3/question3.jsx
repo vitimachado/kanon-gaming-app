@@ -22,12 +22,15 @@ export default function Question3() {
   }, []);
 
   const handleInputOnChange = (data) => {
-    console.log('handleInputOnChange', data);
-    setInputValue(data);
+    setInputValue(data.target.value);
   };
 
   const handleOnClick = () => {
     navigate('/q4and5');
+  };
+
+  const handleBackButton = () => {
+    navigate('/q2');
   };
 
   const style = {
@@ -51,6 +54,9 @@ export default function Question3() {
         />
       </div>
       <Button onClick={handleOnClick}>Next</Button>
+      <Button className="button-fab" onClick={() => handleBackButton()}>
+        Back
+      </Button>
     </QuestionsContainer>
   ) : null;
 }

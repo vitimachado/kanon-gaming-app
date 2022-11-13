@@ -28,6 +28,10 @@ export default function Routes() {
       path: '/q6',
       element: <Question6 />,
     },
+    {
+      path: '*',
+      element: <Question1 />,
+    },
   ]);
 
   return element;

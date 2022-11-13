@@ -7,6 +7,7 @@ import { setCoins } from '../store/reducers/slotMachine_reducer';
 import { clearUser, setUser } from '../store/reducers/user_reducer';
 import useLocalStorage from '../utils/localStorageHook';
 import store from '../store/store';
+import Loading from '../components/common/loading/loading';
 
 export default function Guard({ children }) {
   // eslint-disable-next-line no-unused-vars
@@ -57,6 +58,7 @@ export default function Guard({ children }) {
     <>
       {children}
       <Snackbar />
+      <Loading />
     </>
   );
 }

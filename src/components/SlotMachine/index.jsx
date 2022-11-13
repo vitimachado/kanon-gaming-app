@@ -18,14 +18,26 @@ import {
   WrapperCoinImg,
   WrapperCoins,
   WrapperCoinsContainer,
+  WrapperList,
 } from './styles';
 import coin from '../../assets/img/coin.png';
 
 export default function SlotMachine() {
   const [start, setStart] = useState(false);
+  const [freeButton, setFreeButton] = useState(true);
   const { coins, prize, sortMachine } = useSelector(
     (state) => state.slotMachine,
   );
+
+  const slotMachineRules = [
+    '3 cherries in a row: 50 coins',
+    '2 cherries in a row: 40 coins',
+    '3 apples in a row: 20 coins',
+    '2 Apples in a row: 10 coins',
+    '3 bananas in a row: 15 coins',
+    '2 Bananas in a row: 5 coins',
+    '3 lemons in a row: 3 coins',
+  ];
 
   const checkIsArrayOk = (array, length) =>
     Array.isArray(array) &&
@@ -39,6 +51,7 @@ export default function SlotMachine() {
     );
 
   const handleSpin = () => {
+    setFreeButton(false);
     setStart(true);
     sortMachineApi(coins);
   };
@@ -48,6 +61,7 @@ export default function SlotMachine() {
   };
 
   const handleOnStoped = () => {
+    setFreeButton(true);
     if (prize && prize > 0) {
       store.dispatch(setCoins(coins + prize));
       store.dispatch(
@@ -94,21 +108,26 @@ export default function SlotMachine() {
       <WrapperCoins>
         <WrapperCoinsContainer>
           <div>
-            <WrapperCoinImg src={coin} /> x {coins}
+            <div>
+              <WrapperCoinImg src={coin} /> x {coins}
+            </div>
+            <WrapperList>
+              {slotMachineRules.map((rule, index) => (
+                <li key={`list-rules-${index}`}>{rule}</li>
+              ))}
+            </WrapperList>
           </div>
           <ButonNeon onClick={() => handleAddCoins()} disabled={coins > 0}>
             Add 20 coins
           </ButonNeon>
         </WrapperCoinsContainer>
-        <ButonNeon onClick={() => handleSpin()} disabled={coins <= 0}>
+        <ButonNeon
+          onClick={() => handleSpin()}
+          disabled={coins <= 0 || !freeButton}
+        >
           Spin
         </ButonNeon>
       </WrapperCoins>
-      <div>
-        ● 3 cherries in a row: 50 coins, 2 cherries in a row: 40 coins ● 3
-        Apples in a row: 20 coins, 2 Apples in a row: 10 coins ● 3 Bananas in a
-        row: 15 coins, 2 Bananas in a row: 5 coins ● 3 lemons in a row: 3 coins
-      </div>
     </WraperContainer>
   ) : null;
 }

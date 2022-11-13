@@ -108,3 +108,12 @@ export const ButonNeon = styled.button`
     box-shadow: none;
   }
 `;
+
+export const WrapperList = styled.ul`
+  width: fit-content;
+  font-size: 14px;
+  padding-left: 0px;
+  list-style-type: none;
+  padding: 10px;
+  border: 1px solid;
+`;

@@ -21,6 +21,10 @@ export default function Question2() {
     navigate('/q3');
   };
 
+  const handleBackButton = () => {
+    navigate('/q1');
+  };
+
   const style = {
     width: '40%',
     marginTop: '30px',
@@ -32,6 +36,9 @@ export default function Question2() {
         <CountriesList countries={countries} />
       </div>
       <Button onClick={handleOnClick}>Next</Button>
+      <Button className="button-fab" onClick={() => handleBackButton()}>
+        Back
+      </Button>
     </QuestionsContainer>
   ) : null;
 }

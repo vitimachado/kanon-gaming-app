@@ -2,18 +2,14 @@ import React from 'react';
 import './loading.css';
 import { useSelector } from 'react-redux';
 import Modal from '../modal/modal';
+import { loadingEnum } from '../../../constants/actions';
 
 export default function Loading() {
-  const loading = useSelector((state) => {
-    if (state && state.call && state.call.loading) return state.call.loading;
-    return null;
-  }, []);
+  const { loadingStatus } = useSelector((state) => state.loading);
 
-  const loadingTemplate = loading ? (
-    <Modal>
+  return loadingStatus === loadingEnum.running ? (
+    <Modal showCard={false}>
       <div className="loader" />
     </Modal>
   ) : null;
-
-  return loadingTemplate;
 }
