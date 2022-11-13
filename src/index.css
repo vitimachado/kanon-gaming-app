@@ -2,6 +2,12 @@ html, body {
     font-family: 'Roboto' !important;
     font-size: 22px !important;
     display: block !important;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    background: #fdfdfd!important;
 }
 
 #root {

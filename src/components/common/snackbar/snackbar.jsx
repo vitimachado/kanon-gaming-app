@@ -8,7 +8,6 @@ export default function Snackbar() {
   const { snackbar } = useSelector((state) => state.loading);
 
   useEffect(() => {
-    console.log('Snackbar', snackbar);
     if (snackbar.msg) {
       setTimeout(() => store.dispatch(clearSnackBar()), snackbar.duration);
     }

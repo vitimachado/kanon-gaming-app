@@ -22,7 +22,10 @@ export function setCoinsApi(coins) {
 
 export function sortMachineApi() {
   return api.get(`${urls.urls.sortMachine}`).then(
-    (res) => store.dispatch(runSortMachine(res?.data?.data?.sortMachine)),
+    (res) => {
+      store.dispatch(setCoins(res?.data?.data?.coins));
+      store.dispatch(runSortMachine(res?.data?.data?.sortMachine));
+    },
     // eslint-disable-next-line function-paren-newline
   );
 }
