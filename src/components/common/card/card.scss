@@ -1,6 +1,4 @@
-/*
-   Material Cards
-*/
+@import '../../../constants/global.scss';
 
 .card {
   width: 100%;
@@ -13,6 +11,8 @@
   margin: 1rem;
   padding: 1.5em;
   position: relative;
+
+  @include mixin-responsive-wrapper;
 }
 
 .card-up {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './card.css';
+import './card.scss';
 
 // eslint-disable-next-line object-curly-newline
 export default function Card({

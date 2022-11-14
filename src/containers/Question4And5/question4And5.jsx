@@ -53,7 +53,7 @@ export default function Question4And5() {
       </SignIn>
       {openModal ? (
         <Modal
-          styleCard={{ width: '35%' }}
+          styleCard={{ width: '50%' }}
           onClickBackground={() => handleToggleModal(false)}
         >
           <SignUp closeModal={() => handleToggleModal(false)} />

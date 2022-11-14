@@ -1,0 +1,12 @@
+
+$small: 500px;
+$medium: 900px;
+
+@mixin mixin-responsive-wrapper {
+  @media screen and (max-width: $small) {
+    width: 95%;
+  }
+  @media screen and (max-width: $medium) {
+    width: 70%;
+  }
+}
