@@ -19,5 +19,6 @@ To install project dependencies.
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+The URL points to the api at http://localhos:3001.
+
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
