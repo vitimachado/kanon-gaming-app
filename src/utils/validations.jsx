@@ -1,3 +1,4 @@
+import { everyObjectValuesIsLike, someObjectValuesIsLike } from './objects';
 import { validateEmail, validateLength } from './strings';
 
 const textLengthValidationMsg = (string, ref, min, max) => {
@@ -18,4 +19,18 @@ const emailValidationMsg = (email) =>
   // eslint-disable-next-line no-nested-ternary
   email === null ? null : validateEmail(email) ? null : 'Write a valid email.';
 
-export { textLengthValidationMsg, emailValidationMsg };
+/**
+ * Check Values to enable button.
+ * @param {*} value
+ * @param {*} validation
+ */
+const checkSignButtonValidation = (value, validation) =>
+  // eslint-disable-next-line operator-linebreak
+  everyObjectValuesIsLike(validation, null) &&
+  !someObjectValuesIsLike(value, null);
+
+export {
+  textLengthValidationMsg,
+  checkSignButtonValidation,
+  emailValidationMsg,
+};

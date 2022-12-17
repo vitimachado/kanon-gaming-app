@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable no-underscore-dangle */
 const everyObjectValuesIsLike = (object, value) =>
   Object.values(object).every((item) => item === value);
@@ -29,10 +30,26 @@ function randomArrayValue(array) {
   return array[random];
 }
 
+const createDefaultObjectByKeys = (arr, propertie, value) =>
+  arr.reduce((acc, key) => ({ ...acc, [key[propertie]]: value }), {});
+
+/**
+ *  Method  to check if Array is Ok.
+ *
+ * @param {String[]} array Array of string with the items.
+ * @param {Number} length Number of the length.
+ */
+const checkIsArrayOk = (array, length) =>
+  Array.isArray(array) &&
+  array?.length === length &&
+  !array?.some((data) => data === null);
+
 export {
   everyObjectValuesIsLike,
   someObjectValuesIsLike,
   findAndUpdateTSomePropertyValue,
+  createDefaultObjectByKeys,
   generateKey,
   randomArrayValue,
+  checkIsArrayOk,
 };
